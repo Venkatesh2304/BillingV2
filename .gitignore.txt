@@ -1,4 +1,6 @@
 *.vs
 *.pyc 
 config.txt
-
+bill.pdf
+bill.txt
+bill.docx
