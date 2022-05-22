@@ -39,7 +39,6 @@ class Date :
         self.collection = []
         self.success = 0 
         self.failure = 0 
-        self.sessionid = False 
     def addlogs(self,count_bills = 10,creditrelease={}) :
         print("New Process started")
         config["count"]  = count_bills 
