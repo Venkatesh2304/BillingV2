@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>LeverEDGE Session Error Page</title>
+<link rel="stylesheet" type="text/css" href="/rsunify/resources/CSS/login-styles.css?v=">
+<link rel="shortcut icon" href="/rsunify/resources/imgs/favico.png" />
+<style type="text/css">
+body{
+    background-image: none;
+}
+#browser-message {
+	width: 80%;
+	max-width: 767px;
+	font-size: 16px;
+	padding: 30px 40px;
+	margin: 40px auto;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+	box-sizing: border-box;
+	line-height: 25px;
+}
+.pop-wrapper{
+	top: 25%;
+}
+#dialogScreen {
+    width: 540px;
+    line-height: 20px;
+    font-weight: bold;
+}
+.pnl-header{
+	height: 50px
+}
+.content1-dialog{
+	padding: 5px;
+}
+ul{
+	list-style-type: decimal;
+   padding-left: 15px;
+   padding-top: 0px;
+   margin: 5px;
+}
+</style>
+<script type="text/javascript">
+	window.name = "LeverEDGE Session Exipred";
+</script>
+</head>
+<body>
+<!-- <div id="browser-message">
+	<div>
+		<ul style="list-style-type:none">
+		<li>Session Expired. Possible reasons:
+			<ul>
+				<li>User might have logged in new browser, system.</li>
+				<li>Previous session might abruptly terminated by force stop.</li>
+				<li>Session timeout would have happened.</li>
+			</ul>
+		</li>
+		</ul>
+	</div>
+</div> -->
+<div class="pop-wrapper" style="display: block;">   	
+	<div id="dialogScreen" class="pnl-wrapper pnl-border">     
+		<div class="pnl-header" id="headerDialg"> 
+			<div class="cls-btn-top-warning"></div> 
+			<h2>Session Invalid</h2>
+		</div>
+	<div class="content-dialog">
+	<div class="col-1 formstock content1-dialog">
+		<div>Your session is invalidated due to any of the following reasons.</div>
+		<ul>
+			<li>You have used Back/Forward/Refresh button of your Browser.</li>
+			<li>You have kept the browser window idle for a long time.</li>
+			<li>You have logged in from another browser window or device.</li>
+			<li>You are accessing the application URL from a saved or static page.</li>
+			<li>Previous session might abruptly terminated by force close.</li>
+			<li>Please <a href="/rsunify/views/errorPages/forceCloseSession.jsp" style="font-weight: bolder;">Click Here</a> to log in and continue using LeverEDGE.</li>
+			<li>If the problem persists, please clear the browser cache and try again.</li>				
+		</ul>
+	</div>
+  </div>
+ </div>
+</div>
+
+</body>
+</html>
