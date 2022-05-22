@@ -1,0 +1,5 @@
+prettytable
+docx
+Flask
+pywin32
+requests
