@@ -222,7 +222,8 @@ class Log :
        res[attr] = {"status" : attrib.status , "log":attrib.log ,"time": round(self.process_time[attr],2) ,
                     "class" : (classes[attrib.status]) } 
      return res 
-    def manualprint(self,bills_list,print_type) : 
+    def manualprint(self,bills_list,print_type) :
+       self.Auth()
        for bills in bills_list : 
             self.bills = bills 
             self.Download() 

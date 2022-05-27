@@ -4,9 +4,9 @@ from importbills import *
 import secondarybills
 from time import sleep
 import sys
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
+#import firebase_admin
+#from firebase_admin import credentials
+#from firebase_admin import firestore
 import os
 import webbrowser
 from flask_cors import CORS

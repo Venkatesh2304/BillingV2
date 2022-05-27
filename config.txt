@@ -1,1 +1,1 @@
-{'ikea_user': 'SA', 'ikea_pass': 'Ikea@1234', 'dbName': '41B402', 'headless': 0, 'base': 'https://leveredge130.hulcd.com', 'name': 'TKS', 'lines': '25', 'secadd': 'ARIYA', 'secname': 'DEVAKI'}
+{'ikea_user': 'SA', 'ikea_pass': 'Ikea@1234', 'dbName': '41B402', 'headless': 0, 'base': 'https://leveredge130.hulcd.com', 'name': 'GST', 'lines': '25', 'secadd': 'NOCHIYAM', 'secname': 'DEVAKI'}
