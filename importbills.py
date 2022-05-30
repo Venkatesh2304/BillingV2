@@ -32,6 +32,7 @@ class my_session(Session) :
         kwargs["url"] = self.base + url
         data = super().post(**kwargs)
         if data.status_code != 200 : 
+            print("Relogin Starte")
             self.log.Auth() 
             data = super().post(**kwargs)
         try : 
@@ -125,7 +126,7 @@ class Log :
         self.session.post('/rsunify/app/user/authentication.do',data=data)
         self.session.post("/rsunify/app/user/authenSuccess.htm")
     def Sync(self) :
-        self.session.post('/rsunify/app/fileUploadId/download')
+        print(self.session.post('/rsunify/app/fileUploadId/download'),"Sync Session")
     def Prevbills(self) :
         data = getajax("getdelivery")
         delivery_all_json = self.session.post_json("/rsunify/app/deliveryprocess/billsToBeDeliver.do",data = data)["billHdBeanList"]
