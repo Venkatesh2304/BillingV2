@@ -36,13 +36,15 @@ class Date :
         self.bills = []
         self.lines_count = {}
         self.creditlock = {}
-        self.collection = []
+        self.collection = [] 
         self.success = 0 
         self.failure = 0 
-        self.sessionid = False 
+        self.sessionid = False
+        self.session = None 
     def addlogs(self,count_bills = 10,creditrelease={}) :
+        print(self.__dict__)
         print("New Process started")
-        config["count"]  = count_bills 
+        config["count"]  = count_bills
         config["sessionid"] = self.sessionid 
         log = Log(config,self,creditrelease) 
         self.current_log = log
@@ -54,7 +56,7 @@ class Date :
             if key not in self.lines_count.keys() :
                 self.lines_count[key] = value
         self.lines_count.update(log.lines_count)
-        self.collection += [ collection["parCode"] for collection in  log.filtered_collection ]
+        self.collection += [ collection["pc"] for collection in  log.filtered_collection ]
         self.creditlock = log.creditlock 
         self.session = log.session
         save()
@@ -116,9 +118,6 @@ def prints() :
         print_type["original"] = 1 
     temp.manualprint(bills,print_type)
     return redirect('/billprint')
-
-
-
 
 @app.route('/billindex')
 def index() :

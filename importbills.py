@@ -24,6 +24,7 @@ class my_session(Session) :
     def post_json(self,url,**kwargs):
         kwargs["headers"] = {'Content-type': "application/json; charset=utf-8"}
         kwargs["data"] = json.dumps(kwargs["data"])
+        print(kwargs["data"])
         return self.post(url,**kwargs)
     def get(self,url) : 
         url = self.base + url
@@ -32,7 +33,7 @@ class my_session(Session) :
         kwargs["url"] = self.base + url
         data = super().post(**kwargs)
         if data.status_code != 200 : 
-            print("Relogin Starte")
+            print("Relogin Started")
             self.log.Auth() 
             data = super().post(**kwargs)
         try : 
@@ -87,8 +88,9 @@ class Log :
            self.session = today.session 
            self.session.log = self 
            self.session.base = self.base
-       except : 
+       except Exception as e :
            self.session = my_session(self.base,self)
+           print("session created")
        if len(creditrelease.keys()) ==  0 : 
            self.creditrelease = [] 
        else : 
@@ -103,7 +105,8 @@ class Log :
        process("sync")
        process("prevbills")
        process("collection")
-       process("order")
+       #process("order")
+       self.Order()
        process("delivery")
        if "bills" in self.__dict__.keys()  and self.bills is not None and len(self.bills) != 0 :
            process("download")
@@ -138,26 +141,32 @@ class Log :
                      "orderDate": (self.date- timedelta(days = 1 )).strftime("%Y-%m-%d") + "T18:30:00.000Z"}
        data.update(replaces)
        self.marketorder = self.session.post_json("/rsunify/app/quantumImport/validateload.do",data=data)
-       collection_data = self.marketorder["quantumCollectionList"]
-       self.filtered_collection = [ collection for collection in collection_data  if collection["parCode"] not in self.today.collection ] 
-       data = {"collectionDetails":self.filtered_collection,"importDate":self.date.strftime("%d/%m/%Y"),"rsBankId":1,
+       #with open("market.json","w+") as f  :
+       #     json.dump(self.marketorder,f)
+       collection_data = self.marketorder["mcl"]
+       self.filtered_collection = [ collection for collection in collection_data  if collection["pc"] not in self.today.collection ] 
+       data = {"mcl":self.filtered_collection,"id":self.date.strftime("%d/%m/%Y"),
                "CLIENT_REQ_UID":"l2hgg"+str(random.randint(100,999))+"vt8agyg4sjf"}
-       self.session.post_json("/rsunify/app/quantumImport/importSelectedCollection",data = data)
+       req = self.session.post_json("/rsunify/app/quantumImport/importSelectedCollection",data = data)
+       print("Collection result : " ,req)
+
     def Order(self) :
-      pdata = self.creditrelease.copy()
-      creditunlock(self.session,pdata)
-      order_data = self.marketorder["quantumImportList"]
-      orders = defaultdict(list)
-      for order in order_data : 
-          orders[order["orderNumber"]].append(order) 
       def filterorders() :
           filtered = [] 
           for orderno , items in  orders.items() :
-             itm_det = items[0]
-             if (orderno in self.allowed_bills and len(items) <= self.count and "WHOLE" not in itm_det["mkmName"]   and 
-                                                         sum( [ item["tur"]*item["totAllocQty"] for item in items ] ) > 100)  :
+             itm_det = items[0] #orderno in self.allowed_bills and 
+             if (len(items) <= self.count and "WHOLE" not in itm_det["m"]  and  
+                                                         sum( [ item["t"]*item["aq"] for item in items ] ) > 100)  : # totalAlloc - aq
                  filtered += items
           return filtered 
+
+      pdata = self.creditrelease.copy()
+      creditunlock(self.session,pdata)
+      order_data = self.marketorder["mol"]
+      orders = defaultdict(list)
+      for order in order_data : 
+          orders[order["on"]].append(order) 
+
       self.lines_count = { orderno:len(order) for orderno,order in orders.items() } #dummy rechanged
       self.allowed_bills = []
       self.repeated_bills = []
@@ -170,21 +179,30 @@ class Log :
             else :
                 self.repeated_bills.append(orderno)
       filtered = filterorders()
-      self.orders = filtered 
+      filtered_order_no = list(set([i["on"] for i in filtered ])) 
+      self.orders = order_data 
+      for order in self.orders : 
+          if order["on"] not in filtered_order_no : 
+              order["ck"] = False 
+     
       valid_partys = defaultdict(lambda : {"billvalue" : 0 } )
       for order in  self.orders : 
-         if order["assignQty"] != 0 : 
-               billvalue = valid_partys[order["parName"].replace(' ','')]["billvalue"] + (order["tur"]*order["assignQty"]) 
-               valid_partys[order["parName"].replace(' ','')] = {"parCode": order["parCode"] , "parCodeHll": order["parCodeHll"],
-                             "billvalue":round(billvalue,2) , "salesman":order["salName"],"parCodeRef": order["parCodeRef"] , "parId": order["parId"],"status":False }
-      data = {"orderDetails":filtered ,"importDate":self.date.strftime("%d/%m/%Y"),"callingFrom":1,"applyTcs":True,
-              "CLIENT_REQ_UID":"l2hgg"+str(random.randint(100,999))+"vt8agyg4sjf"}
+         if order["aq"] != 0 : 
+               billvalue = valid_partys[order["p"].replace(' ','')]["billvalue"] + (order["t"]*order["aq"]) 
+               valid_partys[order["p"].replace(' ','')] = {"partyCode": order["pc"] , "parHllCode": order["ph"], "parId" : order["pi"]  ,
+                             "billvalue":round(billvalue,2) , "salesman":order["s"],"parCodeRef": order["pc"] ,"status":False }
+      data = {"mol":self.orders ,"id":self.date.strftime("%d/%m/%Y"),"cf":1,"at":True ,"so" : "'N','B'" ,"ca":0,"bm":0,"bb":0,
+              "CLIENT_REQ_UID": "l6ltv7s15vr"+str(random.randint(10,99))+"mm"+str(random.randint(10,99))+ "vp"}
+      
       self.order_log  =  self.session.post_json("/rsunify/app/quantumImport/importSelected",data=data)
+      print(self.order_log)
+      
       logfilepath = self.order_log["filePath"]
       logfile = self.session.download(logfilepath)
+      
       self.logfile = logfile 
       self.creditlock = interpret(logfile,valid_partys,self.session)
-      print(self.creditlock)
+      
     def Delivery(self) : 
      delivery_all_json = self.session.post_json("/rsunify/app/deliveryprocess/billsToBeDeliver.do",
                                                 data = getajax("getdelivery"))['billHdBeanList']

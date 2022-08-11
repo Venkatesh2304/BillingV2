@@ -17,6 +17,9 @@
 	function manual() {
 		window.open(loc + 'billprint', '_blank');
 	}
+    function config() {
+        window.open(loc + 'config', '_blank');
+    }
 </script>
 
 <style>
@@ -104,6 +107,7 @@
 		<button v-on:click="stop_loop"> Quit </button>
 		<button onclick='manual();'>Manual Printing</button>
 		<button onclick='query();'> Bill Status </button>
+		<button onclick='config();'> Configuration </button>
 		<div class="tables">
 			<table class="status">
 				<caption>Process</caption>
