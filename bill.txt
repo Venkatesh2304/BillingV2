@@ -1,0 +1,100 @@
+
+                                          Tax Invoice        E-Way bill no :        Page :       1 of 2    
+                                                    To                                                     
+  DEVAKI ENTERPRISES                                Invoice No      : TKS24566                             
+  F2/4,INDUSTRIAL ESTATE                            Invoice Date    : 12/08/2022                           
+  ARIYAMANGALAM                                     Retailer Name   : ANANDA SUPER STORES-D-F              
+  TRICHY-620010                                     Address         : NO-18/1 EDA STREET ROAD              
+  PHONE NO         :9944951444                                        TRICHY                               
+  GSTIN No         :33AAPFD1365C1ZR                                   TIRUCHIRAPPALLI                      
+  RS PAN No        :AAPFD1365C                      Phone No        : 8220942444                           
+  Salesman Name    :SIVAMANI. K                     Retailer PAN No :                                      
+  Beat Name        :F-FG EDA STREET                 GSTIN NO        : 33AABPB8460A3ZE                      
+  Region-State Code:33-TAMIL NADU                   Region-StateCode: 33-TAMIL NADU                        
+  HUL STORE ID     :HUL-411701D-P14741              Time of Billing : 2022-08-12 19:34:40                  
+  Vehicle Name     :VECHILE-1                                                                              
+  FSSAI No         :12420028000204                  FSSAI No        :                                      
+  -------------------------------------------------------------------------------------------------------- 
+  SL  HSN  Item Name            MRPQTY  QTY Free  BaseDisc 1 Disc 2  Taxable CGST Amt  S/UTGST  Net Amount 
+  NO                                CS  PCS  Qty  Rate                   Amt               Amt             
+  -------------------------------------------------------------------------------------------------------- 
+  01  0902 3RO DUST HTS [P] 2 325.0  1          272.30              13070.40   326.76   326.76    13723.92 
+  02  0902 3ROSES DUST RS10 [ 10.00      24       8.35  9.01          191.48     4.79     4.79      201.06 
+  03  2101 BRU GOLD GJ 50G    170.0       3     134.64                403.93    36.35    36.35      476.63 
+  04  0901 BRU GREEN LABEL PO 75.00       5      65.53                327.65     8.19     8.19      344.03 
+  05  0901 BRU GREEN LABEL PO 185.0       6     161.64                969.86    24.25    24.25     1018.35 
+  06  0901 BRU GREEN LABEL RO 32.00      12      27.71                332.47     8.31     8.31      349.10 
+  07  2101 BRU INST 200G POLY 380.0       4     300.97               1203.86   108.35   108.35     1420.56 
+  08  2101 BRU INST POLY 50G  90.00      24      71.28               1710.74   153.97   153.97     2018.68 
+  09  2101 BRU INSTANT POLY 1 190.0       6     150.48                902.90    81.26    81.26     1065.42 
+  10  2101 BRU INSTANT RS10 1 10.00      36       7.57  4.09          268.33    24.15    24.15      316.62 
+  11  2101 BRU VEDA 50G POLY  90.00      12      71.28                855.37    76.98    76.98     1009.34 
+  12  2103 HELLMAANS MAYONNAI 90.00       3      73.72  8.85          212.32    12.74    12.74      237.79 
+  13  2103 KISSAN FRESH TOMAT 63.00       6      51.60                309.63    18.58    18.58      346.79 
+  14  2007 KISSAN MIX FRUIT J 165.0       6     135.16                810.94    48.66    48.66      908.25 
+  15  2103 KISSAN SWEET & SPI 72.00       6      58.98                353.87    21.23    21.23      396.33 
+  16  1902 KNORR SOUPY NOODLE 18.00       8      14.74                117.96     7.08     7.08      132.12 
+  17  2104 KNR INSTANT SOUP T 10.00      24       7.78 13.06          173.54    15.62    15.62      204.78 
+  18  2007 KSN MF JAM TUB 90G 20.00      12      16.38                196.60    11.80    11.80      220.19 
+  19  2007 KSN MXD FRT JAM 20 72.00       6      58.98                353.87    21.23    21.23      396.33 
+  20  0902 LIPTON PURE RS 165 165.0       4     142.86                571.43    14.29    14.29      600.00 
+  21  2008 PEANUT BUTTER  RS1 175.0       3     143.35 25.80          404.24    24.25    24.25      452.75 
+  22  2104 SOUP MIX RS 10     10.00      24       7.78 13.06          173.54    15.62    15.62      204.78 
+  23  2104 SOUP SWEET RS 10   10.00      24       7.78 13.06          173.54    15.62    15.62      204.78 
+  24  0902 TAJ MAHAL TEA BAGS 75.00       6      63.21                379.27     9.48     9.48      398.23 
+  25       --Adjustments-                                                                                  
+  26       CREDIT-From Market                                                                      -879.79 
+  27       CREDIT-From Market                                                                      -573.39 
+  28       CREDIT-From Market                                                                       -70.09 
+  Total :                            1  264    0       86.93   0.00 24467.74  1089.55  1089.55    25123.55 
+  -------------------------------------------------------------------------------------------------------- 
+                                                                              Other Disc :         0.00    
+                                                                              Credit Adj :      1523.27    
+                                                                              Debit Adj  :         0.00    
+  Twenty-Five Thousand One Hundred Twenty-Four Rupees Only                   Bill Amount :     25124.00    
+  GST Tax Summary                                                                                          
+  -------------------------------------------------------------------------------------------------------- 
+   CGST %   CGST ValueSGST/UTGST %   SGST/UTGST Value    GST Taxable Value                                 
+  -------------------------------------------------------------------------------------------------------- 
+     2.50%      396.06        2.50%            396.06             15842.56                                 
+     6.00%      165.56        6.00%            165.56              2759.42                                 
+     9.00%      527.92        9.00%            527.92              5865.75                                 
+                                                                                                           
+                                          Tax Invoice                               Page :       2 of 2    
+  To                                                                   Invoice No  :TKS24566               
+  Retailer Name : ANANDA SUPER STORES-D-F                                                                  
+  -------------------------------------------------------------------------------------------------------- 
+  SL  HSN  Item Name            MRPQTY  QTY Free  BaseDisc 1 Disc 2  Taxable CGST Amt  S/UTGST  Net Amount 
+  NO                                CS  PCS  Qty  Rate                   Amt               Amt             
+  -------------------------------------------------------------------------------------------------------- 
+  Total  :     1089.54                        1089.54             24467.73                                 
+  Payout Info                                                                                              
+  -------------------------------------------------------------------------------------------------------- 
+  TGT_MOC   PLG          Eligible     Eligible Visi   Payout Adjusted      Bill Numbers    Balance Payout  
+                    Target Payout            Payout     (Target+Visi)                                      
+  -------------------------------------------------------------------------------------------------------- 
+  072022    DETS          2869.45            374.00            374.00         ,TKS22668           2869.45  
+  072022    FNB              0.00            606.00            606.00          TKS23317              0.00  
+  072022    PP             751.34            382.00            382.00         ,TKS22679            751.34  
+  Channel Program :   SSM                                                                                  
+  U1-HUL - Start Date : 21-07-2022 End Date : 20-08-2022                                                   
+  Component                CPM TARGET     Target(100%)        Achieved          BalanceToDo (100%)         
+  -------------------------------------------------------------------------------------------------------- 
+  DETS                           0.00        227063.00       100274.17                   126788.83         
+  FNB+HFD                        0.00        145227.00       111383.94                    33843.06         
+  OTC                            0.00         22196.00         1342.18                    20853.82         
+  PP                             0.00         45000.00        40268.84                     4731.16         
+  SSM CHEN GT M 8 22                                                                                       
+  Total Discount/scheme amt pass on the Bill:-1436.34                                                      
+  Total Discount/Schemes amt passed to you from HUL for the Period 21/07/2022 to 12/08/2022:5207.58        
+  Secondary Levercare number : 18001232105. Monday to Saturday : 9:00 A.M. to 9:00P.M.                     
+  "I / We hereby certify that articles of food mentioned in the invoice are warranted to be of the         
+  nature and quality which they purport to be as per the Food Safety and Standards Act & Rules."           
+  "This is a computer generated or electronic invoice as per IT Act 2000 and not required to bear a        
+  signature or digital signature as per GST Notification No. 74/2018-Central tax dated 31st December       
+  2018"                                                                                                    
+  .                                                                                                        
+  DEVAKI ENTERPRISES                                                                                       
+  .                                                                                                        
+  Authorized Signatory                                                                                     
+
